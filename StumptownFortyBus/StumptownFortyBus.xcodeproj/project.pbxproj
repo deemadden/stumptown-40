@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EFCE808A44372E1D2515EA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCE50AEB4EC63C968973E6 /* StringExtension.swift */; };
+		2EFCE97A519C13FC000B5673 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCED903D77BD2ED75A9244 /* UIViewExtension.swift */; };
+		95F77C001AFEF7180044675C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77BFF1AFEF7180044675C /* AppDelegate.swift */; };
+		95F77C031AFEF7180044675C /* StumptownFortyBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C011AFEF7180044675C /* StumptownFortyBus.xcdatamodeld */; };
+		95F77C051AFEF7180044675C /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C041AFEF7180044675C /* BusViewController.swift */; };
+		95F77C081AFEF7180044675C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C061AFEF7180044675C /* Main.storyboard */; };
+		95F77C0A1AFEF7180044675C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C091AFEF7180044675C /* Images.xcassets */; };
+		95F77C0D1AFEF7180044675C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C0B1AFEF7180044675C /* LaunchScreen.xib */; };
+		95F77C191AFEF7180044675C /* StumptownFortyBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C181AFEF7180044675C /* StumptownFortyBusTests.swift */; };
+		95F77C251AFFDEFB0044675C /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C231AFFDEFB0044675C /* video1.mp4 */; };
+		95F77C261AFFDEFB0044675C /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C241AFFDEFB0044675C /* video2.mp4 */; };
+		95F77C371AFFE95E0044675C /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C271AFFE95E0044675C /* image1.jpg */; };
+		95F77C381AFFE95E0044675C /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C281AFFE95E0044675C /* image2.jpg */; };
+		95F77C391AFFE95E0044675C /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C291AFFE95E0044675C /* image3.jpg */; };
+		95F77C3A1AFFE95E0044675C /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C2A1AFFE95E0044675C /* image4.jpg */; };
+		95F77C3B1AFFE95E0044675C /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C2B1AFFE95E0044675C /* image5.jpg */; };
+		95F77C3C1AFFE95E0044675C /* image6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C2C1AFFE95E0044675C /* image6.jpg */; };
+		95F77C3D1AFFE95E0044675C /* image7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C2D1AFFE95E0044675C /* image7.jpg */; };
+		95F77C3E1AFFE95E0044675C /* image8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C2E1AFFE95E0044675C /* image8.jpg */; };
+		95F77C3F1AFFE95E0044675C /* image9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C2F1AFFE95E0044675C /* image9.jpg */; };
+		95F77C401AFFE95E0044675C /* image10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C301AFFE95E0044675C /* image10.jpg */; };
+		95F77C411AFFE95E0044675C /* image12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C311AFFE95E0044675C /* image12.jpg */; };
+		95F77C421AFFE95E0044675C /* image13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C321AFFE95E0044675C /* image13.jpg */; };
+		95F77C431AFFE95E0044675C /* image14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C331AFFE95E0044675C /* image14.jpg */; };
+		95F77C441AFFE95E0044675C /* image15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C341AFFE95E0044675C /* image15.jpg */; };
+		95F77C451AFFE95E0044675C /* image16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C351AFFE95E0044675C /* image16.jpg */; };
+		95F77C461AFFE95E0044675C /* image17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95F77C361AFFE95E0044675C /* image17.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95F77C131AFEF7180044675C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95F77BF21AFEF7180044675C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95F77BF91AFEF7180044675C;
+			remoteInfo = StumptownFortyBus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EFCE50AEB4EC63C968973E6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2EFCED903D77BD2ED75A9244 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		95F77BFA1AFEF7180044675C /* StumptownFortyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StumptownFortyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F77BFE1AFEF7180044675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F77BFF1AFEF7180044675C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95F77C021AFEF7180044675C /* StumptownFortyBus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StumptownFortyBus.xcdatamodel; sourceTree = "<group>"; };
+		95F77C041AFEF7180044675C /* BusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
+		95F77C071AFEF7180044675C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95F77C091AFEF7180044675C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		95F77C0C1AFEF7180044675C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		95F77C121AFEF7180044675C /* StumptownFortyBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StumptownFortyBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F77C171AFEF7180044675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F77C181AFEF7180044675C /* StumptownFortyBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StumptownFortyBusTests.swift; sourceTree = "<group>"; };
+		95F77C231AFFDEFB0044675C /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		95F77C241AFFDEFB0044675C /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		95F77C271AFFE95E0044675C /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		95F77C281AFFE95E0044675C /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		95F77C291AFFE95E0044675C /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		95F77C2A1AFFE95E0044675C /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+		95F77C2B1AFFE95E0044675C /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image5.jpg; sourceTree = "<group>"; };
+		95F77C2C1AFFE95E0044675C /* image6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image6.jpg; sourceTree = "<group>"; };
+		95F77C2D1AFFE95E0044675C /* image7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image7.jpg; sourceTree = "<group>"; };
+		95F77C2E1AFFE95E0044675C /* image8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image8.jpg; sourceTree = "<group>"; };
+		95F77C2F1AFFE95E0044675C /* image9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image9.jpg; sourceTree = "<group>"; };
+		95F77C301AFFE95E0044675C /* image10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image10.jpg; sourceTree = "<group>"; };
+		95F77C311AFFE95E0044675C /* image12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image12.jpg; sourceTree = "<group>"; };
+		95F77C321AFFE95E0044675C /* image13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image13.jpg; sourceTree = "<group>"; };
+		95F77C331AFFE95E0044675C /* image14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image14.jpg; sourceTree = "<group>"; };
+		95F77C341AFFE95E0044675C /* image15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image15.jpg; sourceTree = "<group>"; };
+		95F77C351AFFE95E0044675C /* image16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image16.jpg; sourceTree = "<group>"; };
+		95F77C361AFFE95E0044675C /* image17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image17.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95F77BF71AFEF7180044675C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F77C0F1AFEF7180044675C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95F77BF11AFEF7180044675C = {
+			isa = PBXGroup;
+			children = (
+				95F77BFC1AFEF7180044675C /* StumptownFortyBus */,
+				95F77C151AFEF7180044675C /* StumptownFortyBusTests */,
+				95F77BFB1AFEF7180044675C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95F77BFB1AFEF7180044675C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95F77BFA1AFEF7180044675C /* StumptownFortyBus.app */,
+				95F77C121AFEF7180044675C /* StumptownFortyBusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95F77BFC1AFEF7180044675C /* StumptownFortyBus */ = {
+			isa = PBXGroup;
+			children = (
+				95F77C221AFFDEE00044675C /* Test Content */,
+				95F77BFF1AFEF7180044675C /* AppDelegate.swift */,
+				95F77C041AFEF7180044675C /* BusViewController.swift */,
+				2EFCE50AEB4EC63C968973E6 /* StringExtension.swift */,
+				2EFCED903D77BD2ED75A9244 /* UIViewExtension.swift */,
+				95F77C061AFEF7180044675C /* Main.storyboard */,
+				95F77C091AFEF7180044675C /* Images.xcassets */,
+				95F77C0B1AFEF7180044675C /* LaunchScreen.xib */,
+				95F77C011AFEF7180044675C /* StumptownFortyBus.xcdatamodeld */,
+				95F77BFD1AFEF7180044675C /* Supporting Files */,
+			);
+			path = StumptownFortyBus;
+			sourceTree = "<group>";
+		};
+		95F77BFD1AFEF7180044675C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95F77BFE1AFEF7180044675C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95F77C151AFEF7180044675C /* StumptownFortyBusTests */ = {
+			isa = PBXGroup;
+			children = (
+				95F77C181AFEF7180044675C /* StumptownFortyBusTests.swift */,
+				95F77C161AFEF7180044675C /* Supporting Files */,
+			);
+			path = StumptownFortyBusTests;
+			sourceTree = "<group>";
+		};
+		95F77C161AFEF7180044675C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95F77C171AFEF7180044675C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95F77C221AFFDEE00044675C /* Test Content */ = {
+			isa = PBXGroup;
+			children = (
+				95F77C271AFFE95E0044675C /* image1.jpg */,
+				95F77C281AFFE95E0044675C /* image2.jpg */,
+				95F77C291AFFE95E0044675C /* image3.jpg */,
+				95F77C2A1AFFE95E0044675C /* image4.jpg */,
+				95F77C2B1AFFE95E0044675C /* image5.jpg */,
+				95F77C2C1AFFE95E0044675C /* image6.jpg */,
+				95F77C2D1AFFE95E0044675C /* image7.jpg */,
+				95F77C2E1AFFE95E0044675C /* image8.jpg */,
+				95F77C2F1AFFE95E0044675C /* image9.jpg */,
+				95F77C301AFFE95E0044675C /* image10.jpg */,
+				95F77C311AFFE95E0044675C /* image12.jpg */,
+				95F77C321AFFE95E0044675C /* image13.jpg */,
+				95F77C331AFFE95E0044675C /* image14.jpg */,
+				95F77C341AFFE95E0044675C /* image15.jpg */,
+				95F77C351AFFE95E0044675C /* image16.jpg */,
+				95F77C361AFFE95E0044675C /* image17.jpg */,
+				95F77C231AFFDEFB0044675C /* video1.mp4 */,
+				95F77C241AFFDEFB0044675C /* video2.mp4 */,
+			);
+			name = "Test Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95F77BF91AFEF7180044675C /* StumptownFortyBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F77C1C1AFEF7180044675C /* Build configuration list for PBXNativeTarget "StumptownFortyBus" */;
+			buildPhases = (
+				95F77BF61AFEF7180044675C /* Sources */,
+				95F77BF71AFEF7180044675C /* Frameworks */,
+				95F77BF81AFEF7180044675C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StumptownFortyBus;
+			productName = StumptownFortyBus;
+			productReference = 95F77BFA1AFEF7180044675C /* StumptownFortyBus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95F77C111AFEF7180044675C /* StumptownFortyBusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F77C1F1AFEF7180044675C /* Build configuration list for PBXNativeTarget "StumptownFortyBusTests" */;
+			buildPhases = (
+				95F77C0E1AFEF7180044675C /* Sources */,
+				95F77C0F1AFEF7180044675C /* Frameworks */,
+				95F77C101AFEF7180044675C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F77C141AFEF7180044675C /* PBXTargetDependency */,
+			);
+			name = StumptownFortyBusTests;
+			productName = StumptownFortyBusTests;
+			productReference = 95F77C121AFEF7180044675C /* StumptownFortyBusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95F77BF21AFEF7180044675C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = RGA;
+				TargetAttributes = {
+					95F77BF91AFEF7180044675C = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5U69V73RKG;
+					};
+					95F77C111AFEF7180044675C = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 95F77BF91AFEF7180044675C;
+					};
+				};
+			};
+			buildConfigurationList = 95F77BF51AFEF7180044675C /* Build configuration list for PBXProject "StumptownFortyBus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95F77BF11AFEF7180044675C;
+			productRefGroup = 95F77BFB1AFEF7180044675C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95F77BF91AFEF7180044675C /* StumptownFortyBus */,
+				95F77C111AFEF7180044675C /* StumptownFortyBusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95F77BF81AFEF7180044675C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F77C411AFFE95E0044675C /* image12.jpg in Resources */,
+				95F77C081AFEF7180044675C /* Main.storyboard in Resources */,
+				95F77C3B1AFFE95E0044675C /* image5.jpg in Resources */,
+				95F77C3C1AFFE95E0044675C /* image6.jpg in Resources */,
+				95F77C251AFFDEFB0044675C /* video1.mp4 in Resources */,
+				95F77C0D1AFEF7180044675C /* LaunchScreen.xib in Resources */,
+				95F77C261AFFDEFB0044675C /* video2.mp4 in Resources */,
+				95F77C421AFFE95E0044675C /* image13.jpg in Resources */,
+				95F77C431AFFE95E0044675C /* image14.jpg in Resources */,
+				95F77C441AFFE95E0044675C /* image15.jpg in Resources */,
+				95F77C0A1AFEF7180044675C /* Images.xcassets in Resources */,
+				95F77C3A1AFFE95E0044675C /* image4.jpg in Resources */,
+				95F77C451AFFE95E0044675C /* image16.jpg in Resources */,
+				95F77C401AFFE95E0044675C /* image10.jpg in Resources */,
+				95F77C371AFFE95E0044675C /* image1.jpg in Resources */,
+				95F77C3E1AFFE95E0044675C /* image8.jpg in Resources */,
+				95F77C381AFFE95E0044675C /* image2.jpg in Resources */,
+				95F77C391AFFE95E0044675C /* image3.jpg in Resources */,
+				95F77C3D1AFFE95E0044675C /* image7.jpg in Resources */,
+				95F77C3F1AFFE95E0044675C /* image9.jpg in Resources */,
+				95F77C461AFFE95E0044675C /* image17.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F77C101AFEF7180044675C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95F77BF61AFEF7180044675C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F77C051AFEF7180044675C /* BusViewController.swift in Sources */,
+				95F77C001AFEF7180044675C /* AppDelegate.swift in Sources */,
+				95F77C031AFEF7180044675C /* StumptownFortyBus.xcdatamodeld in Sources */,
+				2EFCE808A44372E1D2515EA8 /* StringExtension.swift in Sources */,
+				2EFCE97A519C13FC000B5673 /* UIViewExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F77C0E1AFEF7180044675C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F77C191AFEF7180044675C /* StumptownFortyBusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95F77C141AFEF7180044675C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95F77BF91AFEF7180044675C /* StumptownFortyBus */;
+			targetProxy = 95F77C131AFEF7180044675C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95F77C061AFEF7180044675C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F77C071AFEF7180044675C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		95F77C0B1AFEF7180044675C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F77C0C1AFEF7180044675C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95F77C1A1AFEF7180044675C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95F77C1B1AFEF7180044675C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95F77C1D1AFEF7180044675C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = StumptownFortyBus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95F77C1E1AFEF7180044675C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = StumptownFortyBus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		95F77C201AFEF7180044675C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StumptownFortyBusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StumptownFortyBus.app/StumptownFortyBus";
+			};
+			name = Debug;
+		};
+		95F77C211AFEF7180044675C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StumptownFortyBusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StumptownFortyBus.app/StumptownFortyBus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95F77BF51AFEF7180044675C /* Build configuration list for PBXProject "StumptownFortyBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F77C1A1AFEF7180044675C /* Debug */,
+				95F77C1B1AFEF7180044675C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F77C1C1AFEF7180044675C /* Build configuration list for PBXNativeTarget "StumptownFortyBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F77C1D1AFEF7180044675C /* Debug */,
+				95F77C1E1AFEF7180044675C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F77C1F1AFEF7180044675C /* Build configuration list for PBXNativeTarget "StumptownFortyBusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F77C201AFEF7180044675C /* Debug */,
+				95F77C211AFEF7180044675C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95F77C011AFEF7180044675C /* StumptownFortyBus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95F77C021AFEF7180044675C /* StumptownFortyBus.xcdatamodel */,
+			);
+			currentVersion = 95F77C021AFEF7180044675C /* StumptownFortyBus.xcdatamodel */;
+			path = StumptownFortyBus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 95F77BF21AFEF7180044675C /* Project object */;
+}
