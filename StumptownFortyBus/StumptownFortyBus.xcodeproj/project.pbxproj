@@ -10,6 +10,10 @@
 		2EFCE808A44372E1D2515EA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCE50AEB4EC63C968973E6 /* StringExtension.swift */; };
 		2EFCE97A519C13FC000B5673 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFCED903D77BD2ED75A9244 /* UIViewExtension.swift */; };
 		59ABC822A33B4D82A83A6750 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9356B59EBB8BDADE34E1E6B8 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		952F504B1B0118B700230269 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504A1B0118B700230269 /* User.swift */; };
+		952F504F1B011CE600230269 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504C1B011CE600230269 /* Instagram.swift */; };
+		952F50501B011CE600230269 /* OauthLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504D1B011CE600230269 /* OauthLoginViewController.swift */; };
+		952F50511B011CE600230269 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504E1B011CE600230269 /* CoreDataStack.swift */; };
 		95F77C001AFEF7180044675C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77BFF1AFEF7180044675C /* AppDelegate.swift */; };
 		95F77C031AFEF7180044675C /* StumptownFortyBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C011AFEF7180044675C /* StumptownFortyBus.xcdatamodeld */; };
 		95F77C051AFEF7180044675C /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C041AFEF7180044675C /* BusViewController.swift */; };
@@ -53,6 +57,10 @@
 		35124FFF3DE2E9E193BBC9C0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		52D7367D50A42CDB82E1127C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9356B59EBB8BDADE34E1E6B8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		952F504A1B0118B700230269 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		952F504C1B011CE600230269 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
+		952F504D1B011CE600230269 /* OauthLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthLoginViewController.swift; sourceTree = "<group>"; };
+		952F504E1B011CE600230269 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		95F77BFA1AFEF7180044675C /* StumptownFortyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StumptownFortyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F77BFE1AFEF7180044675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F77BFF1AFEF7180044675C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 				95F77C221AFFDEE00044675C /* Test Content */,
 				95F77BFF1AFEF7180044675C /* AppDelegate.swift */,
 				95F77C041AFEF7180044675C /* BusViewController.swift */,
+				952F504C1B011CE600230269 /* Instagram.swift */,
+				952F504D1B011CE600230269 /* OauthLoginViewController.swift */,
+				952F504E1B011CE600230269 /* CoreDataStack.swift */,
+				952F504A1B0118B700230269 /* User.swift */,
 				2EFCE50AEB4EC63C968973E6 /* StringExtension.swift */,
 				2EFCED903D77BD2ED75A9244 /* UIViewExtension.swift */,
 				95F77C061AFEF7180044675C /* Main.storyboard */,
@@ -379,7 +391,11 @@
 			files = (
 				95F77C051AFEF7180044675C /* BusViewController.swift in Sources */,
 				95F77C001AFEF7180044675C /* AppDelegate.swift in Sources */,
+				952F50501B011CE600230269 /* OauthLoginViewController.swift in Sources */,
+				952F50511B011CE600230269 /* CoreDataStack.swift in Sources */,
+				952F504B1B0118B700230269 /* User.swift in Sources */,
 				95F77C031AFEF7180044675C /* StumptownFortyBus.xcdatamodeld in Sources */,
+				952F504F1B011CE600230269 /* Instagram.swift in Sources */,
 				2EFCE808A44372E1D2515EA8 /* StringExtension.swift in Sources */,
 				2EFCE97A519C13FC000B5673 /* UIViewExtension.swift in Sources */,
 			);

@@ -131,7 +131,7 @@
                         <outlet property="windowThreeView" destination="9N8-eN-9Yy" id="l7c-Yy-Zvd"/>
                         <outlet property="windowTwoImageView" destination="eTQ-7W-0Cp" id="Kyz-fy-6WS"/>
                         <outlet property="windowTwoView" destination="h9j-GT-s0V" id="9x8-oE-Nsf"/>
-                        <segue destination="zvM-rk-oa3" kind="presentation" identifier="LoginSegue" id="g29-9p-xpd"/>
+                        <segue destination="zvM-rk-oa3" kind="presentation" identifier="login" id="g29-9p-xpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -141,7 +141,7 @@
         <!--Instagram Login-->
         <scene sceneID="0mr-0Y-eZW">
             <objects>
-                <viewController storyboardIdentifier="OauthLoginViewController" title="Login View Controller" id="zvM-rk-oa3" userLabel="Instagram Login" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OauthLoginViewController" title="Login View Controller" id="zvM-rk-oa3" userLabel="Instagram Login" customClass="OauthLoginViewController" customModule="StumptownFortyBus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RGS-Rz-yHx"/>
                         <viewControllerLayoutGuide type="bottom" id="nRn-nb-u1v"/>
@@ -154,6 +154,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zvM-rk-oa3" id="y1x-0Y-6DG"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,8 +171,13 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="568" height="320"/>
+                    <connections>
+                        <outlet property="webView" destination="ykc-57-SJf" id="eAb-LI-Gre"/>
+                        <segue destination="KXC-Rc-SCo" kind="unwind" identifier="unwindToBusView" unwindAction="unwindToBusView:" id="5rD-Bv-xvj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rb0-pF-4ka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KXC-Rc-SCo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="377" y="1013"/>
         </scene>
