@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import MediaPlayer
+import AVKit
+import AVFoundation
 import CoreData
 import Alamofire
 import FastImageCache
@@ -20,8 +22,11 @@ class BusViewController: UIViewController {
     @IBOutlet weak var windowTwoView: UIView!
     @IBOutlet weak var windowThreeView: UIView!
     @IBOutlet weak var windowOneImageView: UIImageView!
+    @IBOutlet weak var windowOneVideoContainerView: UIView!
     @IBOutlet weak var windowTwoImageView: UIImageView!
+    @IBOutlet weak var windowTwoVideoContainerView: UIView!
     @IBOutlet weak var windowThreeImageView: UIImageView!
+    @IBOutlet weak var windowThreeVideoContainerView: UIView!
     @IBOutlet weak var bannerView: UIView!
 
     // MARK: Async & CoreData properties
@@ -32,20 +37,18 @@ class BusViewController: UIViewController {
         didSet {
             if user != nil {
                 handleRefresh()
-                //hideLogoutButtonItem(false)
-                
             } else {
                 shouldLogin = true
-                //hideLogoutButtonItem(true)
             }
         }
     }
     
     // MARK: Movie players
-    private var windowOneMoviePlayer: MPMoviePlayerController!
-    private var windowTwoMoviePlayer: MPMoviePlayerController!
-    private var windowThreeMoviePlayer: MPMoviePlayerController!
     private var bannerVideoPlayer: MPMoviePlayerController!
+    private var windowOneAVPlayerController: AVPlayerViewController!
+    private var windowTwoAVPlayerController: AVPlayerViewController!
+    private var windowThreeAVPlayerController: AVPlayerViewController!
+    private var bannerVideoPlayerController: AVPlayerViewController!
     
     // MARK: Data containers
     private var instagramRemoteContentCollection: Array<NSURL> = []
@@ -58,6 +61,7 @@ class BusViewController: UIViewController {
     // MARK: MoviePlayer constraints
     private var moviePlayerHorizontalConstraint:Array<AnyObject> = []
     private var moviePlayerVerticalConstraint:Array<AnyObject> = []
+    
     
     // MARK: Overrides
     override func viewDidLoad() {
@@ -77,10 +81,20 @@ class BusViewController: UIViewController {
             shouldLogin = false
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
+            println("landscape left")
+            self.view.transform = CGAffineTransformMakeScale(1, 1);
+        } else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
+            println("landscape right")
+             self.view.transform = CGAffineTransformMakeScale(-1, 1);
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -93,13 +107,57 @@ class BusViewController: UIViewController {
                 coreDataStack.context.deleteObject(user!)
                 coreDataStack.saveContext()
             }
+        } else if segue.identifier == "windowOnePlayerSegue" && segue.destinationViewController.isKindOfClass(AVPlayerViewController.classForCoder()) {
+            if let aVPlayerController = segue.destinationViewController as? AVPlayerViewController {
+                self.windowOneAVPlayerController = aVPlayerController
+                let url = NSURL(string: "https://scontent.cdninstagram.com/hphotos-xaf1/t50.2886-16/11237394_840898795979885_104026202_n.mp4")
+                self.windowOneAVPlayerController.player = AVPlayer(URL: url)
+                self.windowOneAVPlayerController.player.actionAtItemEnd = .None
+                
+                //set a listener for when the video ends
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                    selector: "loopWindowOne",
+                    name: AVPlayerItemDidPlayToEndTimeNotification,
+                    object: self.windowOneAVPlayerController.player.currentItem)
+                
+                self.windowOneAVPlayerController.player.play()
+            }
+        } else if segue.identifier == "windowTwoPlayerSegue" && segue.destinationViewController.isKindOfClass(AVPlayerViewController.classForCoder()) {
+            if let aVPlayerController = segue.destinationViewController as? AVPlayerViewController {
+                self.windowTwoAVPlayerController = aVPlayerController
+                let url = NSURL(string: "https://scontent.cdninstagram.com/hphotos-xaf1/t50.2886-16/11214739_1116462238380638_1015834890_n.mp4")
+                self.windowTwoAVPlayerController.player = AVPlayer(URL: url)
+                self.windowTwoAVPlayerController.player.actionAtItemEnd = .None
+                
+                //set a listener for when the video ends
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                    selector: "loopWindowTwo",
+                    name: AVPlayerItemDidPlayToEndTimeNotification,
+                    object: self.windowTwoAVPlayerController.player.currentItem)
+                
+                self.windowTwoAVPlayerController.player.play()
+            }
+        } else if segue.identifier == "windowThreePlayerSegue" && segue.destinationViewController.isKindOfClass(AVPlayerViewController.classForCoder()) {
+            if let aVPlayerController = segue.destinationViewController as? AVPlayerViewController {
+                self.windowThreeAVPlayerController = aVPlayerController
+                let url = NSURL(string: "https://scontent.cdninstagram.com/hphotos-xaf1/t50.2886-16/11250762_458654014292737_866203572_n.mp4")
+                self.windowThreeAVPlayerController.player = AVPlayer(URL: url)
+                self.windowThreeAVPlayerController.player.actionAtItemEnd = .None
+                
+                //set a listener for when the video ends
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                    selector: "loopWindowThree",
+                    name: AVPlayerItemDidPlayToEndTimeNotification,
+                    object: self.windowThreeAVPlayerController.player.currentItem)
+                
+                self.windowThreeAVPlayerController.player.play()
+            }
         }
     }
     
     @IBAction func unwindToBusView (segue : UIStoryboardSegue) { }
     
     private func handleRefresh() {
-        initializeMoviePlayers()
         refreshView()
         refreshContent()
         
@@ -109,22 +167,10 @@ class BusViewController: UIViewController {
         var timer4 = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: Selector("refreshContent"), userInfo: nil, repeats: true)
     }
 
-    private func initializeMoviePlayers() {
-        let path = NSBundle.mainBundle().pathForResource("video1", ofType:"mp4")
-        let url = NSURL.fileURLWithPath(path!)
-        windowOneMoviePlayer = MPMoviePlayerController(contentURL: url)!
-        windowTwoMoviePlayer = MPMoviePlayerController(contentURL: url)!
-        windowThreeMoviePlayer = MPMoviePlayerController(contentURL: url)!
-    }
-
     internal func refreshView() {
         windowOneView.contentFile = ""
         windowTwoView.contentFile = ""
         windowThreeView.contentFile = ""
-
-        refreshWindowOne()
-        refreshWindowTwo()
-        refreshWindowThree()
     }
 
     internal func refreshContent() {
@@ -137,22 +183,28 @@ class BusViewController: UIViewController {
     internal func refreshWindowOne() {
          refreshWindow(windowOneView,
                 windowImageView: windowOneImageView,
-                windowMoviePlayer: windowOneMoviePlayer)
+                windowPlayerContainer: windowOneVideoContainerView,
+                windowPlayerController: windowOneAVPlayerController)
     }
 
     internal func refreshWindowTwo() {
         refreshWindow(windowTwoView,
                 windowImageView: windowTwoImageView,
-                windowMoviePlayer: windowTwoMoviePlayer)
+                windowPlayerContainer: windowTwoVideoContainerView,
+                windowPlayerController: windowTwoAVPlayerController)
     }
 
     internal func refreshWindowThree() {
         refreshWindow(windowThreeView,
                 windowImageView: windowThreeImageView,
-                windowMoviePlayer: windowThreeMoviePlayer)
+                windowPlayerContainer: windowThreeVideoContainerView,
+                windowPlayerController: windowThreeAVPlayerController)
     }
 
-    private func refreshWindow(windowView: UIView, windowImageView: UIImageView, windowMoviePlayer: MPMoviePlayerController) {
+    private func refreshWindow(windowView: UIView,
+                                windowImageView: UIImageView,
+                                windowPlayerContainer: UIView,
+                                windowPlayerController: AVPlayerViewController) {
         
         if let randomContentFile = getRandomFile() as? String {
             windowView.contentFile = randomContentFile
@@ -167,11 +219,9 @@ class BusViewController: UIViewController {
             UIView.animateWithDuration(0.2, animations: {
                 windowView.alpha = 0
             }, completion: { finished in
-                if (windowMoviePlayer.playbackState == MPMoviePlaybackState.Playing) {
-                    windowMoviePlayer.stop()
-                    windowView.removeConstraints(self.moviePlayerHorizontalConstraint)
-                    windowView.removeConstraints(self.moviePlayerVerticalConstraint)
-                    windowMoviePlayer.view.removeFromSuperview()
+                if (windowPlayerController.player.rate > 0 && windowPlayerController.player.error == nil) {
+                    windowPlayerController.player.pause()
+                    windowPlayerContainer.hidden = true
                 }
 
                 var contentImage: UIImage?
@@ -184,7 +234,6 @@ class BusViewController: UIViewController {
                         contentImage = UIImage(data: data)
                     }
                 } else {
-                    println("Loading local image")
                     contentImage = UIImage(named: windowView.contentFile!)
                 }
                 
@@ -202,12 +251,10 @@ class BusViewController: UIViewController {
                 windowView.alpha = 0
             }, completion: { finished in
                 windowImageView.hidden = true
-
-                if (windowMoviePlayer.playbackState == MPMoviePlaybackState.Playing) {
-                    windowMoviePlayer.stop()
-                    windowView.removeConstraints(self.moviePlayerHorizontalConstraint)
-                    windowView.removeConstraints(self.moviePlayerVerticalConstraint)
-                    windowMoviePlayer.view.removeFromSuperview()
+                windowPlayerContainer.hidden = true
+                
+                if (windowPlayerController.player.rate > 0 && windowPlayerController.player.error == nil) {
+                    windowPlayerController.player.pause()
                 }
 
                 var url:NSURL?
@@ -216,36 +263,30 @@ class BusViewController: UIViewController {
                     // It's remote
                     println("Assigning remote Instagram video")
                     let url = NSURL(string: windowView.contentFile!)
-                    windowMoviePlayer.movieSourceType = MPMovieSourceType.Streaming
-                    windowMoviePlayer.contentURL = url
+                    windowPlayerController.player.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: url))
+                    windowPlayerController.player.actionAtItemEnd = .None
                 } else {
                     // It's a local
                     println("Loading local video")
                     if let path = NSBundle.mainBundle().pathForResource(windowView.contentFile!.stringByDeletingPathExtension, ofType:"mp4") {
                         let url = NSURL.fileURLWithPath(path)
-                        windowMoviePlayer.movieSourceType = MPMovieSourceType.File
-                        windowMoviePlayer.contentURL = url
+                        windowPlayerController.player.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: url))
+                        windowPlayerController.player.actionAtItemEnd = .None
                     } else {
                         return
                     }
                 }
                 
-                windowMoviePlayer.prepareToPlay()
-                windowMoviePlayer.controlStyle = MPMovieControlStyle.None
-                windowMoviePlayer.repeatMode = MPMovieRepeatMode.One
-                windowMoviePlayer.view.setTranslatesAutoresizingMaskIntoConstraints(false)
-                windowView.addSubview(windowMoviePlayer.view)
+                let seconds : Int64 = 1
+                let preferredTimeScale : Int32 = 1
+                let seekTime : CMTime = CMTimeMake(seconds, preferredTimeScale)
+                windowPlayerController.player.seekToTime(seekTime)
+                windowPlayerContainer.hidden = false
 
-                let views = ["player": windowMoviePlayer.view]
-                self.moviePlayerHorizontalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:|[player]|", options: NSLayoutFormatOptions(0), metrics: nil, views: views)
-                self.moviePlayerVerticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:|[player]|", options: NSLayoutFormatOptions(0), metrics: nil, views: views)
-                windowView.addConstraints(self.moviePlayerHorizontalConstraint)
-                windowView.addConstraints(self.moviePlayerVerticalConstraint)
-
-                windowMoviePlayer.play()
-
-                UIView.animateWithDuration(0.3, animations: {
+                UIView.animateWithDuration(2.0, animations: {
                     windowView.alpha = 1.0
+                    }, completion: { finished in
+                        windowPlayerController.player.play()
                 })
             })
         }
@@ -272,22 +313,18 @@ class BusViewController: UIViewController {
                         let jsonArrayValue = json["data"].arrayValue
                         for jsonArrayItem in jsonArrayValue {
                             if(jsonArrayItem["type"].stringValue == "image") {
-                                // println("\n\nAdding image URL:\n")
-                                // println(jsonArrayItem["images"]["standard_resolution"]["url"].URL!)
                                 let imageUrl = jsonArrayItem["images"]["standard_resolution"]["url"].URL!
                                 self!.instagramRemoteContentCollection.append(imageUrl)
                             } else if (jsonArrayItem["type"].stringValue == "video") {
-                                // println("\n\nAddingvideo URL:")
-                                // println(jsonArrayItem["videos"]["standard_resolution"]["url"].URL!)
                                 let videoUrl = jsonArrayItem["videos"]["standard_resolution"]["url"].URL!
                                 self!.instagramRemoteContentCollection.append(videoUrl)
                             }
                         }
+                        
+                        println(self!.instagramRemoteContentCollection)
                     }
                 }
             }
-            
-            println(self!.instagramRemoteContentCollection)
             
             self!.populatingContent = false
         }
@@ -298,6 +335,8 @@ class BusViewController: UIViewController {
 
         if(!populatingContent && instagramRemoteContentCollection.count > 0) {
             println("getting random file from remote content")
+            println(instagramRemoteContentCollection.count)
+            
             instagramCollectionWithoutFilesInUse = instagramRemoteContentCollection.filter({
                 $0.absoluteString != self.windowOneView.contentFile
                     || $0.absoluteString != self.windowTwoView.contentFile
@@ -315,6 +354,34 @@ class BusViewController: UIViewController {
         let randomIndex = Int(arc4random_uniform(UInt32(instagramCollectionWithoutFilesInUse.count)))
 
         return instagramCollectionWithoutFilesInUse[randomIndex]
+    }
+    
+    internal func loopWindowOne() {
+        let seconds : Int64 = 0
+        let preferredTimeScale : Int32 = 1
+        let seekTime : CMTime = CMTimeMake(seconds, preferredTimeScale)
+        windowOneAVPlayerController.player.seekToTime(seekTime)
+        windowOneAVPlayerController.player.play()
+    }
+    
+    internal func loopWindowTwo() {
+        let seconds : Int64 = 0
+        let preferredTimeScale : Int32 = 1
+        let seekTime : CMTime = CMTimeMake(seconds, preferredTimeScale)
+        windowTwoAVPlayerController.player.seekToTime(seekTime)
+        windowTwoAVPlayerController.player.play()
+    }
+    
+    internal func loopWindowThree() {
+        let seconds : Int64 = 0
+        let preferredTimeScale : Int32 = 1
+        let seekTime : CMTime = CMTimeMake(seconds, preferredTimeScale)
+        windowThreeAVPlayerController.player.seekToTime(seekTime)
+        windowThreeAVPlayerController.player.play()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
 
