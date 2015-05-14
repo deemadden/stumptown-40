@@ -129,25 +129,28 @@
                                     <constraint firstAttribute="bottom" secondItem="98n-fg-TZC" secondAttribute="bottom" id="zQe-aW-ALS"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0x-cL-Uza" userLabel="Banner View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0x-cL-Uza" userLabel="Banner View">
                                 <rect key="frame" x="0.0" y="200" width="568" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1FK-Sp-Gg5">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RS-oI-k0F">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="568" id="PqD-FH-TiY"/>
-                                            <constraint firstAttribute="height" constant="120" id="ncD-aK-q6m"/>
+                                            <constraint firstAttribute="height" constant="120" id="T4E-22-GWO"/>
+                                            <constraint firstAttribute="width" constant="568" id="vEw-Bk-so8"/>
                                         </constraints>
-                                    </imageView>
+                                        <connections>
+                                            <segue destination="vWP-7e-hIX" kind="embed" identifier="bannerPlayerSegue" id="TFl-1S-rfp"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="1FK-Sp-Gg5" secondAttribute="bottom" id="EFG-sL-sa7"/>
+                                    <constraint firstAttribute="bottom" secondItem="9RS-oI-k0F" secondAttribute="bottom" id="H7S-Vy-yBq"/>
+                                    <constraint firstItem="9RS-oI-k0F" firstAttribute="top" secondItem="I0x-cL-Uza" secondAttribute="top" id="N2e-AQ-30P"/>
+                                    <constraint firstItem="9RS-oI-k0F" firstAttribute="leading" secondItem="I0x-cL-Uza" secondAttribute="leading" id="SkJ-3A-jGf"/>
+                                    <constraint firstAttribute="trailing" secondItem="9RS-oI-k0F" secondAttribute="trailing" id="VXm-p4-49O"/>
                                     <constraint firstAttribute="height" constant="120" id="eLW-Uf-Fax"/>
-                                    <constraint firstItem="1FK-Sp-Gg5" firstAttribute="top" secondItem="I0x-cL-Uza" secondAttribute="top" id="ofm-wL-A3w"/>
-                                    <constraint firstAttribute="trailing" secondItem="1FK-Sp-Gg5" secondAttribute="trailing" id="p2D-O0-vT0"/>
                                     <constraint firstAttribute="width" constant="568" id="pR5-hZ-6cw"/>
-                                    <constraint firstItem="1FK-Sp-Gg5" firstAttribute="leading" secondItem="I0x-cL-Uza" secondAttribute="leading" id="tUE-8f-MxX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -198,7 +201,7 @@
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="KJX-gv-XY2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifb-Ng-EH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="412"/>
+            <point key="canvasLocation" x="858" y="367"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="eJu-ZY-I7U">
@@ -206,7 +209,7 @@
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="p5n-uL-hIe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="317-su-uBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="646"/>
+            <point key="canvasLocation" x="853" y="594"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="UVa-xV-5tf">
@@ -214,7 +217,15 @@
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="eDB-rq-c9U" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glh-hd-7km" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="885"/>
+            <point key="canvasLocation" x="853" y="828"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="OeW-DB-pj4">
+            <objects>
+                <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="vWP-7e-hIX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LF-OQ-4Tr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="1050"/>
         </scene>
         <!--Instagram Login-->
         <scene sceneID="0mr-0Y-eZW">

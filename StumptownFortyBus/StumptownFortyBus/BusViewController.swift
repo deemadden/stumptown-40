@@ -48,7 +48,7 @@ class BusViewController: UIViewController {
     private var windowOneAVPlayerController: AVPlayerViewController!
     private var windowTwoAVPlayerController: AVPlayerViewController!
     private var windowThreeAVPlayerController: AVPlayerViewController!
-    private var bannerVideoPlayerController: AVPlayerViewController!
+    private var bannerAVPlayerController: AVPlayerViewController!
     
     // MARK: Data containers
     private var instagramRemoteContentCollection: Array<NSURL> = []
@@ -91,9 +91,39 @@ class BusViewController: UIViewController {
         if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeLeft) {
             println("landscape left")
             self.view.transform = CGAffineTransformMakeScale(1, 1);
+            
+            bannerAVPlayerController.player.pause()
+            if let path = NSBundle.mainBundle().pathForResource("banner", ofType:"mp4") {
+                let url = NSURL.fileURLWithPath(path)
+                self.bannerAVPlayerController.player.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: url))
+                self.bannerAVPlayerController.player.actionAtItemEnd = .None
+                
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                    selector: "loopBanner",
+                    name: AVPlayerItemDidPlayToEndTimeNotification,
+                    object: self.bannerAVPlayerController.player.currentItem)
+                
+                self.bannerAVPlayerController.player.play()
+            }
+            
         } else if (UIDevice.currentDevice().orientation == UIDeviceOrientation.LandscapeRight) {
             println("landscape right")
              self.view.transform = CGAffineTransformMakeScale(-1, 1);
+            
+            bannerAVPlayerController.player.pause()
+            if let path = NSBundle.mainBundle().pathForResource("banner-flip", ofType:"mp4") {
+                let url = NSURL.fileURLWithPath(path)
+                self.bannerAVPlayerController.player.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: url))
+                self.bannerAVPlayerController.player.actionAtItemEnd = .None
+                
+                //set a listener for when the video ends
+                NSNotificationCenter.defaultCenter().addObserver(self,
+                    selector: "loopBanner",
+                    name: AVPlayerItemDidPlayToEndTimeNotification,
+                    object: self.bannerAVPlayerController.player.currentItem)
+                
+                self.bannerAVPlayerController.player.play()
+            }
         }
     }
     
@@ -151,6 +181,24 @@ class BusViewController: UIViewController {
                     object: self.windowThreeAVPlayerController.player.currentItem)
                 
                 self.windowThreeAVPlayerController.player.play()
+            }
+        } else if segue.identifier == "bannerPlayerSegue" && segue.destinationViewController.isKindOfClass(AVPlayerViewController.classForCoder()) {
+            if let aVPlayerController = segue.destinationViewController as? AVPlayerViewController {
+                self.bannerAVPlayerController = aVPlayerController
+                
+                if let path = NSBundle.mainBundle().pathForResource("banner", ofType:"mp4") {
+                    let url = NSURL.fileURLWithPath(path)
+                    self.bannerAVPlayerController.player = AVPlayer(URL: url)
+                    self.bannerAVPlayerController.player.actionAtItemEnd = .None
+                    
+                    //set a listener for when the video ends
+                    NSNotificationCenter.defaultCenter().addObserver(self,
+                        selector: "loopBanner",
+                        name: AVPlayerItemDidPlayToEndTimeNotification,
+                        object: self.bannerAVPlayerController.player.currentItem)
+                    
+                    self.bannerAVPlayerController.player.play()
+                }
             }
         }
     }
@@ -378,6 +426,14 @@ class BusViewController: UIViewController {
         let seekTime : CMTime = CMTimeMake(seconds, preferredTimeScale)
         windowThreeAVPlayerController.player.seekToTime(seekTime)
         windowThreeAVPlayerController.player.play()
+    }
+    
+    internal func loopBanner() {
+        let seconds : Int64 = 0
+        let preferredTimeScale : Int32 = 1
+        let seekTime : CMTime = CMTimeMake(seconds, preferredTimeScale)
+        bannerAVPlayerController.player.seekToTime(seekTime)
+        bannerAVPlayerController.player.play()
     }
     
     deinit {

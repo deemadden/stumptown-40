@@ -14,6 +14,8 @@
 		952F504F1B011CE600230269 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504C1B011CE600230269 /* Instagram.swift */; };
 		952F50501B011CE600230269 /* OauthLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504D1B011CE600230269 /* OauthLoginViewController.swift */; };
 		952F50511B011CE600230269 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F504E1B011CE600230269 /* CoreDataStack.swift */; };
+		9594A0B01B0416AD007C3DE5 /* banner-flip.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9594A0AE1B0416AD007C3DE5 /* banner-flip.mp4 */; };
+		9594A0B11B0416AD007C3DE5 /* banner.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9594A0AF1B0416AD007C3DE5 /* banner.mp4 */; };
 		95F77C001AFEF7180044675C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77BFF1AFEF7180044675C /* AppDelegate.swift */; };
 		95F77C031AFEF7180044675C /* StumptownFortyBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C011AFEF7180044675C /* StumptownFortyBus.xcdatamodeld */; };
 		95F77C051AFEF7180044675C /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F77C041AFEF7180044675C /* BusViewController.swift */; };
@@ -61,6 +63,8 @@
 		952F504C1B011CE600230269 /* Instagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		952F504D1B011CE600230269 /* OauthLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OauthLoginViewController.swift; sourceTree = "<group>"; };
 		952F504E1B011CE600230269 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9594A0AE1B0416AD007C3DE5 /* banner-flip.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "banner-flip.mp4"; sourceTree = "<group>"; };
+		9594A0AF1B0416AD007C3DE5 /* banner.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = banner.mp4; sourceTree = "<group>"; };
 		95F77BFA1AFEF7180044675C /* StumptownFortyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StumptownFortyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F77BFE1AFEF7180044675C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F77BFF1AFEF7180044675C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 		95F77C221AFFDEE00044675C /* Test Content */ = {
 			isa = PBXGroup;
 			children = (
+				9594A0AE1B0416AD007C3DE5 /* banner-flip.mp4 */,
+				9594A0AF1B0416AD007C3DE5 /* banner.mp4 */,
 				95F77C271AFFE95E0044675C /* image1.jpg */,
 				95F77C281AFFE95E0044675C /* image2.jpg */,
 				95F77C291AFFE95E0044675C /* image3.jpg */,
@@ -310,9 +316,11 @@
 				95F77C251AFFDEFB0044675C /* video1.mp4 in Resources */,
 				95F77C0D1AFEF7180044675C /* LaunchScreen.xib in Resources */,
 				95F77C261AFFDEFB0044675C /* video2.mp4 in Resources */,
+				9594A0B11B0416AD007C3DE5 /* banner.mp4 in Resources */,
 				95F77C421AFFE95E0044675C /* image13.jpg in Resources */,
 				95F77C431AFFE95E0044675C /* image14.jpg in Resources */,
 				95F77C441AFFE95E0044675C /* image15.jpg in Resources */,
+				9594A0B01B0416AD007C3DE5 /* banner-flip.mp4 in Resources */,
 				95F77C0A1AFEF7180044675C /* Images.xcassets in Resources */,
 				95F77C3A1AFFE95E0044675C /* image4.jpg in Resources */,
 				95F77C451AFFE95E0044675C /* image16.jpg in Resources */,
